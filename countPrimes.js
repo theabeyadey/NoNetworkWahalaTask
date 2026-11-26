@@ -1,23 +1,21 @@
-function countPrimes(upperLimit) {
+function printPrimes(upperLimit) {
+  let currentNumber = 2;
 
-    let counter = 0;
+  while (currentNumber <= upperLimit) {
+    let divisorCount = 0;
 
-    for (let count = 2; count < upperLimit; count++) {
-
-        let divisorCount = 0;
-
-        for (let divisor = 1; divisor <= count; divisor++) {
-            if (count % divisor === 0) {
-                divisorCount++;
-            }
-        }
-
-        if (divisorCount === 2) {
-            counter++;
-        }
+    for (let count = 1; count <= currentNumber; count++) {
+      if (currentNumber % count === 0) {
+        divisorCount++;
+      }
     }
 
-    return counter;
+    if (divisorCount === 2) {
+      console.log(currentNumber);
+    }
+
+    currentNumber++;
+  }
 }
 
-console.log(countPrimes(10));
+printPrimes(10);
